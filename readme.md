@@ -12,7 +12,7 @@ Currently you may find here some examples of microservices implementation using 
 ### Usage
 1. Download and run **Minikube** using command: `minikube start --vm-driver=virtualbox --memory='4000mb'` 
 2. Build Maven project with using command: `mvn clean install`
-3. Build Docker images for each module using command, for example: `docker build -t piomin/employee:1.1 .`
+3. Build Docker images for each module using command, for example: `docker build -t piomin/employee:1.0 .`
 4. Go to `/kubernetes` directory in repository
 5. Apply all templates to Minikube using command: `kubectl apply -f <filename>.yaml`
 6. Check status with `kubectl get pods`

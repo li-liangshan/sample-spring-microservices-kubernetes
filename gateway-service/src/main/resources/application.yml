@@ -1,11 +1,11 @@
 spring:
   application:
     name: gateway
-    
-logging:
-  pattern: 
-    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
-    
+
+#logging:
+#  pattern:
+#    console: "%d{yyyy-MM-dd HH:mm:ss} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
 zuul:
   routes:
     department:
@@ -14,3 +14,25 @@ zuul:
       path: /employee/**
     organization:
       path: /organization/**
+  host:
+    connect-timeout-millis: 120000
+    connection-request-timeout-millis: 120000
+    socket-timeout-millis: 120000
+
+ribbon:
+  connectTimeout: 60000
+  ReadTimeout: 120000
+  restclient:
+    enabled: true
+  eager-load:
+    enabled: true
+
+hystrix:
+  metrics:
+    enabled: true
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 50000

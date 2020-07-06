@@ -42,6 +42,7 @@ metadata:
   name: organization
   labels:
     app: organization
+    spring-boot: "true"
 spec:
   ports:
   - port: 8080
